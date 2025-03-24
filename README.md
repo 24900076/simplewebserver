@@ -38,6 +38,7 @@ Open a browser and navigate to http://127.0.0.1:8000 (or the assigned port).
 ## PROGRAM:
 
 from http.server import HTTPServer,BaseHTTPRequestHandler
+
 content='''
 
 <!doctype html>
@@ -103,7 +104,6 @@ content='''
         <th>No pen or touch input is available for this display</th>
      
      </tr>
-     
 
 </table>
 
@@ -116,7 +116,7 @@ class MyServer(BaseHTTPRequestHandler):
 
     def do_GET(self):
     
-        print("Get request received...")
+            print("Get request received...")
         
         self.send_response(200) 
         
@@ -125,7 +125,6 @@ class MyServer(BaseHTTPRequestHandler):
         self.end_headers()
         
         self.wfile.write(content.encode())
-
 
 print("This is my webserver") 
 
